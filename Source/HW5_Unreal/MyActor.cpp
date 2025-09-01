@@ -44,10 +44,12 @@ void AMyActor::Move()
 		start.X += Step();
 		start.Y += Step();
 
-		totDist += Distance(previous, start);
+
 
 		UE_LOG(LogTemp, Error, TEXT("Move: %d\t|\tX: %f, Y: %f"), i+1, start.X, start.Y);
+		UE_LOG(LogTemp, Warning, TEXT("Distance: %f\t"), Distance(previous, start));
 
+		totDist += Distance(previous, start);
 		evCnt += createEvent();
 	}
 
